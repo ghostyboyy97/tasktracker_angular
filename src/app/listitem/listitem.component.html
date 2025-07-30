@@ -6,6 +6,6 @@
         <option value="completed">Completed</option>
     </select>
     <input type="text" #editedTitle [id]="item.uuid" [value]="item.title" (change)="item.title = editedTitle.value; saveItems.emit();"/>
-    <button (click)="remove.emit()"><img src="./trash.svg"></button>
+    <button (click)="remove.emit()"><img src="./trash.svg" title="Delete this task"></button>
     <textarea placeholder="Add a description" rows="3" #editedDesc (change)="item.desc = editedDesc.value; saveItems.emit();">{{item.desc}}</textarea>
 </div>

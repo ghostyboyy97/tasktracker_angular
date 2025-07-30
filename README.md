@@ -1,6 +1,26 @@
 # TasktrackerAngular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.3.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.3. It is currently hosted through GitHub Pages for static access, and utilizes localStorage on the user's device to dynamically save and load task lists.
+
+## How to create a list
+
+Opening the app starts on the All Lists view. Click "Add a new list" to enter the tasklist view. You will be prompted with three potential inputs:
+- "Back to all lists", which returns you to the All Lists view
+- "Add a title", a text input to name your current tasklist
+- A + button to add a task to the list
+Fill in a title for your list and then click + to start adding tasks to your list!
+
+## Task management
+
+Each task has its own title and optional description field. Name the task in its title field, and then add any extra notes about the task or a list of subtasks in the description text input below.
+
+To delete a task, press the trash can icon.
+
+Each task can have four statuses, selectable from a dropdown on the left:
+- To Do, for tasks not started yet
+- In Progress, for tasks that are started but not complete
+- On Hold, for tasks that cannot be started yet
+- Completed, for finished tasks
 
 ## Development server
 
@@ -35,6 +55,11 @@ ng build
 ```
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+
+Additionally, to automatically deploy to github pages, install [angular-cli-ghpages](https://www.npmjs.com/package/angular-cli-ghpages) via npm and then run 
+```bash
+ng deploy --base-href=/tasktracker_angular/
+```
 
 ## Running unit tests
 

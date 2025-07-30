@@ -6,7 +6,7 @@
   @if (currentList.uuid !== 0){
     <!-- list is loaded, show its content here -->
     <div class="list_ctr">
-      <button (click)="unsetCurrentList();" class="nav_button">Back to all lists</button>
+      <button (click)="unsetCurrentList();" class="nav_button" title="Back to all lists">Back to all lists</button>
       <input #listTitle placeholder="Add a title" id="listTitle" [value]="currentList.title" (change)="currentList.title = listTitle.value; saveItems();"/>
       <div class="list_ctr__items">
         @for(item of items; track item.uuid){
@@ -20,14 +20,14 @@
       <h2>Load a task list below, or create a new one to get started</h2>
       <div class="all_lists__ctr">
         @for (list of lists; track list.uuid){
-          <div class="list_entry" #loadList [id]="list.uuid" (click)="setList(loadList.id)">
+          <div class="list_entry" #loadList [id]="list.uuid" (click)="setList(loadList.id)" title="Load this tasklist">
             <img src="./carat.svg" class="list_entry__icon">
             <div class="list_entry__title">{{list.title}}</div>
-            <button class="list_entry__button">Load list <img src="./arrow.svg"></button>
+            <button class="list_entry__button">Load tasklist <img src="./arrow.svg"></button>
           </div>
         }
       </div>
-      <button class="add_list nav_button" (click)="generateNewList()">Add a new list</button>
+      <button class="add_list nav_button" (click)="generateNewList()" title="Add a new tasklist">Add a new list</button>
     </div>
   }
 
