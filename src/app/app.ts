@@ -136,4 +136,8 @@ export class App {
     this.font = 100 * ratio;
   }
 
+  openReadme(){
+    window.open("https://github.com/ghostyboyy97/tasktracker_angular", "_blank");
+  }
+
 }

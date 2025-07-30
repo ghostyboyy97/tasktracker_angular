@@ -1,7 +1,7 @@
 <main class="main" (window:resize)="onResize($event)" style="font-size: {{font}}px;">
   <header>
     <h1>{{ title }}</h1>
-    <button>?</button>
+    <button class="readme_button" title="Learn how this app works" (click)="openReadme()">?</button>
   </header>
   @if (currentList.uuid !== 0){
     <!-- list is loaded, show its content here -->
