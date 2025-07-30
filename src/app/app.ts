@@ -91,9 +91,7 @@ export class App {
   setList(id: string){
     let targetListID = parseInt(id);
     let targetList: List = this.allLists.find((el)=>{return el.uuid === targetListID}) || {uuid: 0, title: "", items: []};
-    console.log(typeof targetList);
     this.currentList = targetList;
-    console.log(this.currentList)
     this.allItems = this.currentList.items;
     localStorage.setItem(this.LOCAL_STORAGE_ACTIVE_KEY, JSON.stringify(this.currentList.uuid));
   }
@@ -101,8 +99,6 @@ export class App {
 
 
   saveItems(){
-    console.log("save");
-    console.log(this.allItems)
     this.currentList.items = this.allItems;
     localStorage.setItem(this.LOCAL_STORAGE_KEY, JSON.stringify(this.allLists));
   }
@@ -120,9 +116,7 @@ export class App {
 
 
   ngOnInit(event: Event){
-    console.log("setup")
     let itemsToLoad = localStorage.getItem(this.LOCAL_STORAGE_KEY);
-    console.log(itemsToLoad);
     if (typeof itemsToLoad){
       this.allLists = JSON.parse(itemsToLoad || "[]");
       let previousActiveList = localStorage.getItem(this.LOCAL_STORAGE_ACTIVE_KEY) || "0";

@@ -13,7 +13,7 @@
           <app-listitem (remove)="remove(item)" (saveItems)="saveItems()" [item]="item"></app-listitem>
         }
       </div>
-      <button class="nav_button add_item_to_list" (click)="addItem()" title="Add new entry"><img src="/plus.svg"></button>
+      <button class="nav_button add_item_to_list" (click)="addItem()" title="Add new entry"><img src="./plus.svg"></button>
     </div>
   } @else {
     <div class="all_lists__wrapper">
@@ -21,9 +21,9 @@
       <div class="all_lists__ctr">
         @for (list of lists; track list.uuid){
           <div class="list_entry" #loadList [id]="list.uuid" (click)="setList(loadList.id)">
-            <img src="/carat.svg" class="list_entry__icon">
+            <img src="./carat.svg" class="list_entry__icon">
             <div class="list_entry__title">{{list.title}}</div>
-            <button class="list_entry__button">Load list <img src="/arrow.svg"></button>
+            <button class="list_entry__button">Load list <img src="./arrow.svg"></button>
           </div>
         }
       </div>
