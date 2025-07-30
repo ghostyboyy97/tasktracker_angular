@@ -86,6 +86,7 @@ export class App {
       items: [],
     };
     this.allLists.push(this.currentList);
+    localStorage.setItem(this.LOCAL_STORAGE_ACTIVE_KEY, JSON.stringify(this.currentList.uuid));
   }
 
   setList(id: string){
